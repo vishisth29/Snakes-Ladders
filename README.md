@@ -5,9 +5,9 @@
 1. Game
     -> Start()
 2. Player
-   -> getName() 
-   -> getPosition()
-   -> setPosition()
+   -> getName() <br />
+   -> getPosition()<br />
+   -> setPosition()<br />
 3. Dice 
    -> roll()
 4. Board
