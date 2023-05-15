@@ -4,7 +4,7 @@
 # Class Structure
 1. Game
     -> Start()
-2. Player
+2. Player<br />
    -> getName() <br />
    -> getPosition()<br />
    -> setPosition()<br />
