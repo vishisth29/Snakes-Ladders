@@ -2,7 +2,6 @@ package com.company;
 
 import java.util.*;
 
-
 class Board {
     private static final int SIZE = 100;
     private Map<Integer, Integer> snakes;
@@ -57,4 +56,51 @@ class Board {
             ladders.put(start, end);
         }
     }
+
+    public void printBoard() {
+        System.out.println("----- INITIAL BOARD -----");
+        for (int i = SIZE; i >= 1; i--) {
+            if (snakes.containsKey(i)) {
+                System.out.print("S ");
+            } else if (ladders.containsKey(i)) {
+                System.out.print("L ");
+            } else {
+                System.out.print(i + " ");
+            }
+
+            if (i % 10 == 1) {
+                System.out.println();
+            }
+        }
+        System.out.println("-----------------");
+    }
+
+    public void printBoardWithPlayers(List<Player> players) {
+        System.out.println("----- FINAL BOARD -----");
+        for (int i = SIZE; i >= 1; i--) {
+            boolean hasPlayer = false;
+            for (Player player : players) {
+                if (player.getPosition() == i) {
+                    System.out.print(player.getName().charAt(0) + " ");
+                    hasPlayer = true;
+                    break;
+                }
+            }
+            if (!hasPlayer) {
+                if (snakes.containsKey(i)) {
+                    System.out.print("S ");
+                } else if (ladders.containsKey(i)) {
+                    System.out.print("L ");
+                } else {
+                    System.out.print(i + " ");
+                }
+            }
+
+            if (i % 10 == 1) {
+                System.out.println();
+            }
+        }
+        System.out.println("-----------------");
+    }
+
 }
